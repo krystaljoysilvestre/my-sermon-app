@@ -14,8 +14,8 @@ import {
 } from "@mui/material";
 import { useRouter } from "next/navigation";
 
-import ActivityFeed from "./components/ActivityFeed";
-import FeedbackModal from "@/ui/FeedbackModal";
+import ActivityFeed from "@/components/ui/ActivityFeed";
+import FeedbackModal from "@/components/ui/FeedbackModal";
 
 export default function Dashboard() {
   const router = useRouter();

@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-import SettingsModal from "./components/Settings/Modal";
+import SettingsModal from "@/components/ui/Settings/Modal";
 
 export default function ProfilePage() {
   const [openSettings, setOpenSettings] = useState(false);
