@@ -13,6 +13,9 @@ module.exports = {
       textColor: {
         DEFAULT: "#232323",
       },
+      colors: {
+        primary: "#232323",
+      },
     },
   },
   plugins: [],

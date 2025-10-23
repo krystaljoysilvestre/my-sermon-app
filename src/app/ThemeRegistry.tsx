@@ -1,10 +1,33 @@
 "use client";
 
 import { createTheme, ThemeProvider } from "@mui/material";
-import { Outfit } from "next/font/google";
+import { Outfit, Zen_Dots } from "next/font/google";
+
+// Extend Material-UI theme to include custom typography
+declare module "@mui/material/styles" {
+  interface TypographyVariants {
+    zenDots: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    zenDots?: React.CSSProperties;
+  }
+}
+
+declare module "@mui/material/Typography" {
+  interface TypographyPropsVariantOverrides {
+    zenDots: true;
+  }
+}
 
 const outfit = Outfit({
   weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const zenDots = Zen_Dots({
+  weight: ["400"],
   subsets: ["latin"],
   display: "swap",
 });
@@ -62,6 +85,11 @@ const theme = createTheme({
     },
     button: {
       fontFamily: outfit.style.fontFamily,
+    },
+    // Custom Zen Dots font for special elements
+    zenDots: {
+      fontFamily: zenDots.style.fontFamily,
+      fontWeight: 400,
     },
   },
 });
