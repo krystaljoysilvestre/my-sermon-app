@@ -60,15 +60,23 @@ export default function FeedbackModal({ open, onClose }: any) {
         </DialogContent>
 
         <DialogActions sx={{ px: 3, pb: 2 }}>
-          <Button onClick={onClose}>Cancel</Button>
-          <Button
-            variant="contained"
-            color="primary"
+          <button
+            onClick={onClose}
+            className="inline-flex items-center justify-center px-6 py-3 text-gray-600 hover:text-gray-800 hover:bg-gray-100 transition-all duration-300 font-medium rounded-2xl hover:scale-105"
+          >
+            Cancel
+          </button>
+          <button
             onClick={handleSubmit}
             disabled={!rating}
+            className={`inline-flex items-center justify-center px-6 py-3 rounded-2xl transition-all duration-300 font-semibold hover:scale-105 ${
+              !rating
+                ? "bg-gray-200 text-gray-400 cursor-not-allowed"
+                : "bg-blue-600 text-white hover:bg-blue-700 shadow-lg hover:shadow-xl"
+            }`}
           >
             Submit
-          </Button>
+          </button>
         </DialogActions>
       </Dialog>
 
